@@ -47,6 +47,7 @@ jobs:
             docker run -d \
             --name laravel-app \
             -p 5000:80 \
+            -v /etc/apache2/sites-available/daarulmukhtarin.my.id-le-ssl.conf:/etc/apache2/sites-available/daarulmukhtarin.my.id-le-ssl.conf \
             -v /var/www/laravel-docker/.env:/var/www/html/deploy/daarulmukhtarin/.env \
             yusnars/laravel-app:latest
             docker exec laravel-app php artisan migrate --force
