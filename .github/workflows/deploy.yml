@@ -49,6 +49,10 @@ jobs:
             -p 5000:80 \
             -v /var/www/laravel-docker/.env:/var/www/html/deploy/daarulmukhtarin/.env \
             yusnars/laravel-app:latest
+
+            echo "==== ENV inside container ===="
+            docker exec laravel-app grep DB_ /var/www/html/deploy/daarulmukhtarin/.env
+            
             docker exec laravel-app php artisan migrate --force
             docker exec laravel-app php artisan config:clear
             docker exec laravel-app php artisan cache:clear
