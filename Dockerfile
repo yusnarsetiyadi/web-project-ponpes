@@ -22,9 +22,6 @@ COPY . /var/www/html/deploy/daarulmukhtarin
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Set Apache DocumentRoot ke public/
-RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/apache2/sites-available/daarulmukhtarin.my.id-le-ssl.conf
-
 # Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
     && chmod -R 777 /var/www/html/deploy/daarulmukhtarin
