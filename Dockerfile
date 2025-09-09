@@ -27,8 +27,5 @@ RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/a
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
     && chmod -R 777 /var/www/html/deploy/daarulmukhtarin
 
-RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin/storage \
-    && chmod -R 777 /var/www/html/deploy/daarulmukhtarin/storage
-
 EXPOSE 80
 CMD ["apache2-foreground"]
