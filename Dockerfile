@@ -25,7 +25,7 @@ RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/a
 
 # Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
-    && chmod -R 755 /var/www/html/deploy/daarulmukhtarin/storage
+    && chmod -R 777 /var/www/html/deploy/daarulmukhtarin
 
 EXPOSE 80
 CMD ["apache2-foreground"]
