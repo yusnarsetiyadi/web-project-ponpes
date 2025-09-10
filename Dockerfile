@@ -23,19 +23,15 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
 # Set Apache DocumentRoot ke public/
-COPY daarulmukhtarin.my.id-le-ssl.conf /etc/apache2/sites-available/
-RUN a2enmod rewrite \
-    && a2enmod ssl \
-    && a2enmod proxy \
-    && a2enmod proxy_http \
-    && a2enmod headers \
-    && a2ensite daarulmukhtarin.my.id-le-ssl.conf \
-    && a2dissite 000-default.conf
-RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/apache2/sites-available/daarulmukhtarin.my.id-le-ssl.conf
+RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/apache2/sites-available/000-default.conf
 
 # Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
     && chmod -R 777 /var/www/html/deploy/daarulmukhtarin
+
+# Permission Laravel
+RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin/storage /var/www/html/deploy/daarulmukhtarin/bootstrap/cache \
+    && chmod -R 775 /var/www/html/deploy/daarulmukhtarin/storage /var/www/html/deploy/daarulmukhtarin/bootstrap/cache
 
 EXPOSE 80
 CMD ["apache2-foreground"]
