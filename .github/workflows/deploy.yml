@@ -53,5 +53,3 @@ jobs:
             docker exec laravel-app php artisan config:clear
             docker exec laravel-app php artisan cache:clear
             docker exec laravel-app php artisan config:cache
-            docker exec laravel-app chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin/storage
-            docker exec laravel-app chmod -R 775 /var/www/html/deploy/daarulmukhtarin/storage

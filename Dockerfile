@@ -4,7 +4,7 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y \
     libpng-dev libjpeg-dev libfreetype6-dev \
     libzip-dev zip unzip git curl \
-    default-mysql-client \
+    default-mysql-client nano \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql gd zip \
     && rm -rf /var/lib/apt/lists/*
@@ -27,7 +27,7 @@ RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/a
 
 # Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
-    && chmod -R 777 /var/www/html/deploy/daarulmukhtarin
+    && chmod -R 775 /var/www/html/deploy/daarulmukhtarin
 
 # Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin/storage /var/www/html/deploy/daarulmukhtarin/bootstrap/cache \
