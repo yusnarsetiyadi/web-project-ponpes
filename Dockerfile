@@ -22,6 +22,17 @@ COPY . /var/www/html/deploy/daarulmukhtarin
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
+# Set Apache DocumentRoot ke public/
+COPY daarulmukhtarin.my.id-le-ssl.conf /etc/apache2/sites-available/
+RUN a2enmod rewrite \
+    && a2enmod ssl \
+    && a2enmod proxy \
+    && a2enmod proxy_http \
+    && a2enmod headers \
+    && a2ensite daarulmukhtarin.my.id-le-ssl.conf \
+    && a2dissite 000-default.conf
+RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/apache2/sites-available/daarulmukhtarin.my.id-le-ssl.conf
+
 # Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
     && chmod -R 777 /var/www/html/deploy/daarulmukhtarin
