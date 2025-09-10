@@ -8,5 +8,5 @@
     }
 @endphp
 <h2 class="uk-text-bold">Selamat Datang Kembali, {{ Auth::guard('santris')->user()->nama_lengkap }}!</h2>
-<p>Senang melihat Anda kembali di halaman dashboard santri. Berikut adalah informasi terbaru untuk Anda. </p>
+<p>Senang melihat Anda kembali di halaman dashboard santri. Berikut adalah informasi terbaru untuk Anda.</p>
 @endsection
