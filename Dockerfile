@@ -26,10 +26,6 @@ RUN composer install --no-dev --optimize-autoloader
 RUN sed -i 's!/var/www/html!/var/www/html/deploy/daarulmukhtarin/public!' /etc/apache2/sites-available/000-default.conf
 
 # Permission Laravel
-RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin \
-    && chmod -R 775 /var/www/html/deploy/daarulmukhtarin
-
-# Permission Laravel
 RUN chown -R www-data:www-data /var/www/html/deploy/daarulmukhtarin/storage /var/www/html/deploy/daarulmukhtarin/bootstrap/cache \
     && chmod -R 775 /var/www/html/deploy/daarulmukhtarin/storage /var/www/html/deploy/daarulmukhtarin/bootstrap/cache
 

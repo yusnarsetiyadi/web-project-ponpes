@@ -53,3 +53,4 @@ jobs:
             docker exec laravel-app php artisan config:clear
             docker exec laravel-app php artisan cache:clear
             docker exec laravel-app php artisan config:cache
+            docker exec laravel-app php artisan storage:link
