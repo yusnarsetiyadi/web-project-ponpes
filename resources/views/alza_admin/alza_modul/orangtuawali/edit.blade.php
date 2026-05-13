@@ -18,9 +18,9 @@
                     </ul>
                 </div>
                 @endif
-                {!! Form::model($orangtuawali, ['method' => 'PATCH', 'route' =>
-                [config('pathadmin.admin_prefix').'orangtuawalis.update', $orangtuawali->id],'enctype' =>
-                'multipart/form-data']) !!}
+                <form action="{{ route(config('pathadmin.admin_prefix').'orangtuawalis.update', $orangtuawali->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
                 <div class="form-body">
                     <div class="row">
                         <input type="hidden" name="santri_id" value="{{$orangtuawali->santri_id}}">
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>

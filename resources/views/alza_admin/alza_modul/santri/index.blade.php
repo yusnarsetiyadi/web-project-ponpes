@@ -115,11 +115,11 @@
                                             href="{{ route(config('pathadmin.admin_prefix').'santris.edit', $santri->id) }}">Ubah</a>
                                         @endcan
                                         @can('santri-delete')
-                                        {!! Form::open(['method' => 'DELETE', 'route' =>
-                                        [config('pathadmin.admin_prefix').'santris.destroy', $santri->id], 'style' =>
-                                        'display:inline']) !!}
-                                        {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
-                                        {!! Form::close() !!}
+                                        <form action="{{ route(config('pathadmin.admin_prefix').'santris.destroy', $santri->id) }}" method="POST" style="display:inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        </form>
                                         @endcan
                                     </center>
                                 </td>

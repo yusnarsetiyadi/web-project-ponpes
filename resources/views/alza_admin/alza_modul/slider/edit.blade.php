@@ -18,9 +18,9 @@
                     </ul>
                 </div>
                 @endif
-                {!! Form::model($slider, ['method' => 'PATCH', 'route' =>
-                [config('pathadmin.admin_prefix').'sliders.update', $slider->id],'enctype' => 'multipart/form-data'])
-                !!}
+                <form action="{{ route(config('pathadmin.admin_prefix').'sliders.update', $slider->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
                 <div class="form-body">
                     <div class="row">
 
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>

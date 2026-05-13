@@ -18,9 +18,9 @@
                     </ul>
                 </div>
                 @endif
-                {!! Form::model($halaman, ['method' => 'PATCH', 'route' =>
-                [config('pathadmin.admin_prefix').'halamans.update', $halaman->id],'enctype' => 'multipart/form-data'])
-                !!}
+                <form action="{{ route(config('pathadmin.admin_prefix').'halamans.update', $halaman->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
                 <div class="form-body">
                     <div class="row">
 
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>

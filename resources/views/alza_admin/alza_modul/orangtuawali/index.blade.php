@@ -55,9 +55,11 @@
                                                         href="{{ route(config('pathadmin.admin_prefix').'orangtuawalis.edit', $orangtuawali->id) }}">Ubah</a>
                                                 @endcan
                                                 @can('orangtuawali-delete')
-                                                    {!! Form::open(['method' => 'DELETE', 'route' => [config('pathadmin.admin_prefix').'orangtuawalis.destroy', $orangtuawali->id], 'style' => 'display:inline']) !!}
-                                                    {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <form action="{{ route(config('pathadmin.admin_prefix').'orangtuawalis.destroy', $orangtuawali->id) }}" method="POST" style="display:inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                    </form>
                                                 @endcan
                                             </center>
                                         </td>

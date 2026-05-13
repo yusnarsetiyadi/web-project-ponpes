@@ -18,55 +18,57 @@
                             </ul>
                         </div>
                     @endif
-                    {!! Form::model($user, ['method' => 'PATCH', 'route' => [config('pathadmin.admin_prefix') . 'users.update', $user->id]]) !!}
+                    <form action="{{ route(config('pathadmin.admin_prefix') . 'users.update', $user->id) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
                     <div class="form-body">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Name:</strong>
-                                    {!! Form::text('name', $user->name, ['placeholder' => 'Name', 'class' => 'form-control']) !!}
+                                    <input type="text" name="name" value="{{ old('name', $user->name) }}" placeholder="Name" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Username:</strong>
-                                    {!! Form::text('username', $user->username, ['placeholder' => 'Username', 'class' => 'form-control']) !!}
+                                    <input type="text" name="username" value="{{ old('username', $user->username) }}" placeholder="Username" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Email:</strong>
-                                    {!! Form::text('email', $user->email, ['placeholder' => 'Email', 'class' => 'form-control']) !!}
+                                    <input type="text" name="email" value="{{ old('email', $user->email) }}" placeholder="Email" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Password:</strong>
-                                    {!! Form::password('password', ['placeholder' => 'Password', 'class' => 'form-control']) !!}
+                                    <input type="password" name="password" placeholder="Password" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Confirm Password:</strong>
-                                    {!! Form::password('confirm-password', ['placeholder' => 'Confirm Password', 'class' => 'form-control']) !!}
+                                    <input type="password" name="confirm-password" placeholder="Confirm Password" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Address:</strong>
-                                    {!! Form::text('address', $user->address, ['placeholder' => 'address', 'class' => 'form-control']) !!}
+                                    <input type="text" name="address" value="{{ old('address', $user->address) }}" placeholder="address" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Contact:</strong>
-                                    {!! Form::text('contact', $user->contact, ['placeholder' => 'contact', 'class' => 'form-control']) !!}
+                                    <input type="text" name="contact" value="{{ old('contact', $user->contact) }}" placeholder="contact" class="form-control">
                                 </div>
                             </div>
 
@@ -90,7 +92,11 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Role:</strong>
-                                    {!! Form::select('roles[]', $roles, $userRole, ['class' => 'form-control', 'multiple']) !!}
+                                    <select name="roles[]" class="form-control" multiple>
+                                        @foreach($roles as $id => $name)
+                                            <option value="{{ $id }}" {{ in_array($id, (array)$userRole) ? 'selected' : '' }}>{{ $name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
@@ -101,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

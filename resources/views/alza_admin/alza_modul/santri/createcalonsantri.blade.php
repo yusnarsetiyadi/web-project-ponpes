@@ -19,8 +19,8 @@
                     </ul>
                 </div>
                 @endif
-                {!! Form::open(['route' => config('pathadmin.admin_prefix').'santris.store', 'method' => 'POST', 'class'
-                => 'form form-vertical','enctype' => 'multipart/form-data']) !!}
+                <form action="{{ route(config('pathadmin.admin_prefix').'santris.store') }}" method="POST" class="form form-vertical" enctype="multipart/form-data">
+                @csrf
                 <div class="form-body">
                     <div class="row">
                         <input type="hidden" name="diterima" value="0">
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>

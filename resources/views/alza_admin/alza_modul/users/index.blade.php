@@ -71,9 +71,11 @@
                                                     href="{{ route(config('pathadmin.admin_prefix') . 'users.show', $user->id) }}">Show</a>
                                                 <a class="btn btn-primary btn-sm"
                                                     href="{{ route(config('pathadmin.admin_prefix') . 'users.edit', $user->id) }}">Edit</a>
-                                                {!! Form::open(['method' => 'DELETE', 'route' => [config('pathadmin.admin_prefix') . 'users.destroy', $user->id], 'style' => 'display:inline']) !!}
-                                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
-                                                {!! Form::close() !!}
+                                                <form action="{{ route(config('pathadmin.admin_prefix') . 'users.destroy', $user->id) }}" method="POST" style="display:inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
                                             </center>
                                         </td>
                                     </tr>

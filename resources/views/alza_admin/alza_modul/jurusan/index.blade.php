@@ -51,9 +51,11 @@
                                                         href="{{ route(config('pathadmin.admin_prefix').'jurusans.edit', $jurusan->id) }}">Ubah</a>
                                                 @endcan
                                                 @can('jurusan-delete')
-                                                    {!! Form::open(['method' => 'DELETE', 'route' => [config('pathadmin.admin_prefix').'jurusans.destroy', $jurusan->id], 'style' => 'display:inline']) !!}
-                                                    {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <form action="{{ route(config('pathadmin.admin_prefix').'jurusans.destroy', $jurusan->id) }}" method="POST" style="display:inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                    </form>
                                                 @endcan
                                             </center>
                                         </td>

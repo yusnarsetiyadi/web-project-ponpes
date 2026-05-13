@@ -15,8 +15,8 @@ class Santri extends Model implements Authenticatable
     protected $table = 'santri';
     protected $fillable = ['nama_lengkap', 'username', 'tempat_lahir','tanggal_lahir','jenis_kelamin','no_telepon','email','alamat','password','verifikasi','password_resets','diterima','alasan','jurusan_id','tingkat_pendidikan','pw_nohash'];
 
-    public $dates = [
-        'deleted_at'
+    protected $casts = [
+        'deleted_at' => 'datetime',
     ];
     public function getAuthIdentifierName()
     {

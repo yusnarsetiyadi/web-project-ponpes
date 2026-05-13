@@ -97,11 +97,11 @@
                                             @endif
                                         @endcan
                                         @can('tagihan-delete')
-                                        {!! Form::open(['method' => 'DELETE', 'route' =>
-                                        [config('pathadmin.admin_prefix').'tagihans.destroy', $tagihan->id], 'style' =>
-                                        'display:inline']) !!}
-                                        {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
-                                        {!! Form::close() !!}
+                                        <form action="{{ route(config('pathadmin.admin_prefix').'tagihans.destroy', $tagihan->id) }}" method="POST" style="display:inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        </form>
                                         @endcan
                                     </center>
                                 </td>

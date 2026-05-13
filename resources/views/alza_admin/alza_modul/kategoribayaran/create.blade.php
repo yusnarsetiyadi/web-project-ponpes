@@ -19,8 +19,8 @@
                     </ul>
                 </div>
                 @endif
-                {!! Form::open(['route' => config('pathadmin.admin_prefix').'kategoribayarans.store', 'method' =>
-                'POST', 'class' => 'form form-vertical','enctype' => 'multipart/form-data']) !!}
+                <form action="{{ route(config('pathadmin.admin_prefix').'kategoribayarans.store') }}" method="POST" class="form form-vertical" enctype="multipart/form-data">
+                @csrf
                 <div class="form-body">
                     <div class="row">
 
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>

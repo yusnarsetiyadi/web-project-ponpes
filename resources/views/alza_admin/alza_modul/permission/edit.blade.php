@@ -18,13 +18,15 @@
                             </ul>
                         </div>
                     @endif
-                    {!! Form::model($permission, ['method' => 'PATCH', 'route' => [config('pathadmin.admin_prefix') . 'permissions.update', $permission->id]]) !!}
+                    <form action="{{ route(config('pathadmin.admin_prefix') . 'permissions.update', $permission->id) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
                     <div class="form-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Nama Permissions</label>
-                                    {!! Form::text('title', html_entity_decode(htmlspecialchars_decode($permission->name)), ['placeholder' => 'Masukan Judul', 'class' => 'form-control']) !!}
+                                    <input type="text" name="title" value="{{ old('title', html_entity_decode(htmlspecialchars_decode($permission->name))) }}" placeholder="Masukan Judul" class="form-control">
                                     <input type="hidden" name="guard_name" value="{{ $permission->guard_name }}">
                                 </div>
                             </div>
@@ -35,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

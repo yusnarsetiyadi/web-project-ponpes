@@ -34,9 +34,9 @@
                         </div>
                     </form>
                 </div>
-                {!! Form::model($santri, ['method' => 'PATCH', 'route' =>
-                [config('pathadmin.admin_prefix').'santris.update', $santri->id],'enctype' => 'multipart/form-data'])
-                !!}
+                <form action="{{ route(config('pathadmin.admin_prefix').'santris.update', $santri->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
                 <div class="form-body">
                     <div class="row">
 
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                {!! Form::close() !!}
+                </form>
             </div>
         </div>
     </div>

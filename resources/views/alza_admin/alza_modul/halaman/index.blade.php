@@ -51,9 +51,11 @@
                                                         href="{{ route(config('pathadmin.admin_prefix').'halamans.edit', $halaman->id) }}">Ubah</a>
                                                 @endcan
                                                 @can('halaman-delete')
-                                                    {!! Form::open(['method' => 'DELETE', 'route' => [config('pathadmin.admin_prefix').'halamans.destroy', $halaman->id], 'style' => 'display:inline']) !!}
-                                                    {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <form action="{{ route(config('pathadmin.admin_prefix').'halamans.destroy', $halaman->id) }}" method="POST" style="display:inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                                    </form>
                                                 @endcan
                                             </center>
                                         </td>

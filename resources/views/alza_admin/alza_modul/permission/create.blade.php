@@ -18,13 +18,14 @@
                             </ul>
                         </div>
                     @endif
-                    {!! Form::open(['route' => config('pathadmin.admin_prefix') . 'permissions.store', 'method' => 'POST', 'class' => 'form form-vertical']) !!}
+                    <form action="{{ route(config('pathadmin.admin_prefix') . 'permissions.store') }}" method="POST" class="form form-vertical">
+                        @csrf
                     <div class="form-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Nama Permissions</label>
-                                    {!! Form::text('name', null, ['placeholder' => 'Masukan nama permission yang ingin dibuat', 'class' => 'form-control']) !!}
+                                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Masukan nama permission yang ingin dibuat" class="form-control">
                                     <input type="hidden" name="guard_name" value="web">
                                 </div>
                             </div>
@@ -35,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

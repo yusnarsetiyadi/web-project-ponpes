@@ -52,9 +52,11 @@
                                                         href="{{ route(config('pathadmin.admin_prefix') . 'permissions.edit', $permission->id) }}">Edit</a>
                                                 @endcan
                                                 @can('permission-delete')
-                                                    {!! Form::open(['method' => 'DELETE', 'route' => [config('pathadmin.admin_prefix') . 'permissions.destroy', $permission->id], 'style' => 'display:inline']) !!}
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <form action="{{ route(config('pathadmin.admin_prefix') . 'permissions.destroy', $permission->id) }}" method="POST" style="display:inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
                                                 @endcan
                                             </center>
                                         </td>

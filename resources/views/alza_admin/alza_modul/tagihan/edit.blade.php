@@ -18,7 +18,9 @@
                             </ul>
                         </div>
                     @endif
-                    {!! Form::model($tagihan, ['method' => 'PATCH', 'route' => [config('pathadmin.admin_prefix').'tagihans.update', $tagihan->id],'enctype' => 'multipart/form-data']) !!}
+                    <form action="{{ route(config('pathadmin.admin_prefix').'tagihans.update', $tagihan->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
                     <div class="form-body">
                         <div class="row">
                             
@@ -37,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

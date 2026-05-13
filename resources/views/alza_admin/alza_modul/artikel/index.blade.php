@@ -60,11 +60,11 @@
                                             href="{{ route(config('pathadmin.admin_prefix').'artikels.edit', $artikel->id) }}">Ubah</a>
                                         @endcan
                                         @can('artikel-delete')
-                                        {!! Form::open(['method' => 'DELETE', 'route' =>
-                                        [config('pathadmin.admin_prefix').'artikels.destroy', $artikel->id], 'style' =>
-                                        'display:inline']) !!}
-                                        {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
-                                        {!! Form::close() !!}
+                                        <form action="{{ route(config('pathadmin.admin_prefix').'artikels.destroy', $artikel->id) }}" method="POST" style="display:inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        </form>
                                         @endcan
                                     </center>
                                 </td>

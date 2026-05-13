@@ -18,13 +18,15 @@
                             </ul>
                         </div>
                     @endif
-                    {!! Form::model($role, ['method' => 'PATCH', 'route' => [config('pathadmin.admin_prefix') . 'roles.update', $role->id]]) !!}
+                    <form action="{{ route(config('pathadmin.admin_prefix') . 'roles.update', $role->id) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
                     <div class="form-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
                                     <strong>Name:</strong>
-                                    {!! Form::text('name', $role->name, ['placeholder' => 'Name', 'class' => 'form-control']) !!}
+                                    <input type="text" name="name" value="{{ old('name', $role->name) }}" placeholder="Name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -32,7 +34,7 @@
                                     <strong>Permission:</strong>
                                     <br />
                                     @foreach ($permission as $value)
-                                        <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, ['class' => 'name']) }}
+                                        <label><input type="checkbox" name="permission[]" value="{{ $value->id }}" class="name" {{ in_array($value->id, $rolePermissions) ? 'checked' : '' }}>
                                             {{ $value->name }}</label>
                                         <br />
                                     @endforeach
@@ -45,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>

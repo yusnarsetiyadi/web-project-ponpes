@@ -18,13 +18,14 @@
                             </ul>
                         </div>
                     @endif
-                    {!! Form::open(['route' => config('pathadmin.admin_prefix') . 'roles.store', 'method' => 'POST', 'class' => 'form form-vertical']) !!}
+                    <form action="{{ route(config('pathadmin.admin_prefix') . 'roles.store') }}" method="POST" class="form form-vertical">
+                        @csrf
                     <div class="form-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    {!! Form::text('name', null, ['placeholder' => 'Name', 'class' => 'form-control']) !!}
+                                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-12">
@@ -32,7 +33,7 @@
                                     <strong>Permission:</strong>
                                     <br />
                                     @foreach ($permission as $k => $value)
-                                        <label>{{ Form::checkbox('permission[]', $value->id, false, ['class' => 'name']) }}
+                                        <label><input type="checkbox" name="permission[]" value="{{ $value->id }}" class="name">
                                             {{ $value->name }}</label>
                                         <br />
                                     @endforeach
@@ -45,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
             </div>
         </div>
