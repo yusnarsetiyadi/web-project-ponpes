@@ -46,7 +46,7 @@
                                     <center>{{ $key + 1 + $valuepage }}</center>
                                 </td>
                                 <td>
-                                    <img src="{{url('/storage/slider/'.$slider->gambar)}}" alt="{{$slider->judul}}" title="{{$slider->keterangan}}" width="50">
+                                    <img src="{{url('/file/slider/'.$slider->gambar)}}" alt="{{$slider->judul}}" title="{{$slider->keterangan}}" width="50">
                                 </td>
                                 <td>{{$slider->judul}}</td>
                                 <td>{{$slider->keterangan}}</td>

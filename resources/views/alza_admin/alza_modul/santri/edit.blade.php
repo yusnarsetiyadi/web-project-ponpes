@@ -23,7 +23,7 @@
                         @csrf
                         <label for="fileInput-{{ $santri->id }}" style="cursor: pointer;">
                             @if ($santri->fotoSantri && $santri->fotoSantri->foto)
-                                <img id="preview-{{ $santri->id }}" src="{{ url('/storage/fotosantri/' . $santri->fotoSantri->foto) }}" alt="{{ $santri->nama_lengkap }}" width="160" height="160" style="object-fit: cover; border-radius: 50%;">
+                                <img id="preview-{{ $santri->id }}" src="{{ url('/file/fotosantri/' . $santri->fotoSantri->foto) }}" alt="{{ $santri->nama_lengkap }}" width="160" height="160" style="object-fit: cover; border-radius: 50%;">
                             @else
                                 <img id="preview-{{ $santri->id }}" src="{{ asset('assets/img/img11.jpg') }}" alt="{{ $santri->nama_lengkap }}" width="160" height="160" style="object-fit: cover; border-radius: 50%;">
                             @endif

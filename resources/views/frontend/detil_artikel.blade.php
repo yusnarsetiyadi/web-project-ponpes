@@ -23,7 +23,7 @@
             <div class="uk-card uk-card-default uk-border-rounded uk-box-shadow-medium">
                 <!-- Gambar -->
                 <div class="uk-card-media-top">
-                    <img src="{{ url('/storage/artikel/' . $artikel->gambar) }}" alt="{{ $artikel->judul }}" class="uk-border-rounded" style="width: 100%;">
+                    <img src="{{ url('/file/artikel/' . $artikel->gambar) }}" alt="{{ $artikel->judul }}" class="uk-border-rounded" style="width: 100%;">
                 </div>
 
                 <div class="uk-card-body">
@@ -53,7 +53,7 @@
                         <a href="{{ url('/detil-artikel/' . $related->seo) }}" class="uk-link-reset">
                             <div class="uk-card uk-card-default uk-card-small uk-grid-collapse uk-border-rounded" uk-grid>
                                 <div class="uk-card-media-left uk-width-1-3">
-                                    <img src="{{ url('/storage/artikel/' . $related->gambar) }}" alt="{{ $related->judul }}" style="width: 100%; height: auto;">
+                                    <img src="{{ url('/file/artikel/' . $related->gambar) }}" alt="{{ $related->judul }}" style="width: 100%; height: auto;">
                                     <span class="uk-label uk-position-top-left uk-margin-small" style="background: #024d09">{{$related->kategori->judul}}</span>
                                 </div>
                                 <div class="uk-width-expand">

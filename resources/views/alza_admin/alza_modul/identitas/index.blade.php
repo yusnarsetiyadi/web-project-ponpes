@@ -47,7 +47,7 @@
                                         value="{{ $iden->kontak_web }}">
                                 </div>
                                 <div class="form-group">
-                                    <img src="{{ url('/storage/logo/' . $iden->logo_web) }}" alt="{{ $iden->nama_web }}"
+                                    <img src="{{ url('/file/logo/' . $iden->logo_web) }}" alt="{{ $iden->nama_web }}"
                                         class="img-thumbnail rounded mb-1" width="150"><br>
                                     <label for="exampleInputUsername1">Logo Web</label>
                                     <input type="file" class="form-control" name="logo_web">

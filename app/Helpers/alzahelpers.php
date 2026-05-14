@@ -27,7 +27,7 @@ class AlzaHelpers
     public static function logo()
     {
         $iden = Identitas::select('logo_web')->where('id',1)->first();
-        return url('/storage/logo/'.$iden->logo_web);
+        return url('/file/logo/'.$iden->logo_web);
     }
     
     public static function maps()

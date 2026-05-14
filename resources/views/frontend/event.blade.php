@@ -38,7 +38,7 @@
                             @if ($row->gambar=='' || $row->gambar == null)
                                 <img src="{{ url('/assets/img/noimage.png') }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
                             @else
-                                <img src="{{ url('/storage/event/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
+                                <img src="{{ url('/file/event/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
                             @endif
                         </div>
                         <div class="uk-padding-small">

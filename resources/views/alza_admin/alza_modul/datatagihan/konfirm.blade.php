@@ -66,7 +66,7 @@
                                 <td>{{ $tagihan->tahun }}</td>
                                 <td>
                                     @if($tagihan->bukti)
-                                        <a href="{{ url('/storage/'.$tagihan->bukti) }}" target="_blank">Lihat Bukti</a>
+                                        <a href="{{ url('/file/'.$tagihan->bukti) }}" target="_blank">Lihat Bukti</a>
                                     @else
                                         -
                                     @endif

@@ -46,7 +46,7 @@
                                     <center>{{ $key + 1 + $valuepage }}</center>
                                 </td>
                                 <td>
-                                    <img src="{{url('/storage/artikel/'.$program->gambar)}}" alt="{{$program->judul}}" width="50">
+                                    <img src="{{url('/file/artikel/'.$program->gambar)}}" alt="{{$program->judul}}" width="50">
                                 </td>
                                 <td>{{$program->seo}}</td>
                                 <td>{{$program->judul}}</td>

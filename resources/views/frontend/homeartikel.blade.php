@@ -12,7 +12,7 @@
                     <div class="uk-card uk-border-rounded">
                         <div class="square-wrapper uk-card-media-top">
                             @if ($row->gambar!='' || $row->gambar!=null)
-                                <img src="{{ url('/storage/artikel/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
+                                <img src="{{ url('/file/artikel/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
                             @else
                                 <img src="{{ url('/assets/img/noimage.png') }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
                             @endif

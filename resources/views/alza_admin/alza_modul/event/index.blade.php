@@ -46,7 +46,7 @@
                                     <center>{{ $key + 1 + $valuepage }}</center>
                                 </td>
                                 <td>
-                                    <img src="{{url('/storage/event/'.$event->gambar)}}" alt="{{$event->judul}}" width="50">
+                                    <img src="{{url('/file/event/'.$event->gambar)}}" alt="{{$event->judul}}" width="50">
                                 </td>
                                 <td>{{$event->judul}}</td>
                                 <td>{{$event->tanggal_mulai}}</td>

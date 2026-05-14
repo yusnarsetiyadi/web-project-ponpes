@@ -7,7 +7,7 @@
                 <a href="{{ url('/detil-event/' . $row->seo) }}" class="uk-link-reset">
                     <div class="uk-card uk-border-rounded">
                         <div class="uk-card-media-top">
-                            <img src="{{ url('/storage/event/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded" style="width: 100%;">
+                            <img src="{{ url('/file/event/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded" style="width: 100%;">
                             <span class="uk-label uk-position-top-left uk-margin-small" style="background: #024d09">EVENT</span>
                         </div>
                         <div class="uk-padding-small">

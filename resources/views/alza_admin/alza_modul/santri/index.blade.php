@@ -57,7 +57,7 @@
                                 </td>
                                 <td>
                                     @if($santri->fotoSantri && $santri->fotoSantri->foto)
-                                        <img src="{{ asset('storage/fotosantri/' . $santri->fotoSantri->foto) }}" alt="Foto Santri" width="60">
+                                        <img src="{{ url('/file/fotosantri/' . $santri->fotoSantri->foto) }}" alt="Foto Santri" width="60">
                                     @else
                                         <small>Belum ada foto</small>
                                     @endif

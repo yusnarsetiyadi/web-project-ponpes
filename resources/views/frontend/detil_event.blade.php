@@ -26,7 +26,7 @@
             <div class="uk-card uk-card-default uk-border-rounded uk-box-shadow-medium">
                 <!-- Gambar -->
                 <div class="uk-card-media-top">
-                    <img src="{{ url('/storage/event/' . $event->gambar) }}" alt="{{ $event->judul }}" class="uk-border-rounded" style="width: 100%;">
+                    <img src="{{ url('/file/event/' . $event->gambar) }}" alt="{{ $event->judul }}" class="uk-border-rounded" style="width: 100%;">
                 </div>
 
                 <div class="uk-card-body">
@@ -75,7 +75,7 @@
                         <a href="{{ url('/detil-event/' . $related->seo) }}" class="uk-link-reset">
                             <div class="uk-card uk-card-default uk-card-small uk-grid-collapse uk-border-rounded" uk-grid>
                                 <div class="uk-card-media-left uk-width-1-3">
-                                    <img src="{{ url('/storage/event/' . $related->gambar) }}" alt="{{ $related->judul }}" style="width: 100%; height: auto;">
+                                    <img src="{{ url('/file/event/' . $related->gambar) }}" alt="{{ $related->judul }}" style="width: 100%; height: auto;">
                                 </div>
                                 <div class="uk-width-expand">
                                     <div class="uk-card-body">

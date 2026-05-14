@@ -54,7 +54,7 @@
                             @if ($row->gambar=='' || $row->gambar == null)
                                 <img src="{{ url('/assets/img/1748513284_IMG-20241129-WA0103.jpg') }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
                             @else
-                                <img src="{{ url('/storage/artikel/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
+                                <img src="{{ url('/file/artikel/'.$row->gambar) }}" alt="{{$row->judul}}" class="uk-border-rounded square-image" style="width: 100%;">
                             @endif
                             <span class="uk-label uk-position-top-left uk-margin-small" style="background: #024d09">{{$row->kategori->judul}}</span>
                         </div>

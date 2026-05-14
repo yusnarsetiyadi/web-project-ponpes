@@ -29,7 +29,7 @@
                     @if (!$santri_foto)
                         <img src="{{ asset('assets/img/img11.jpg') }}" alt="{{ $santri->nama_lengkap }}" class="uk-border-circle" width="180" height="180">
                     @else
-                        <img src="{{ url('/storage/fotosantri/' . $santri_foto->foto) }}" alt="{{ $santri->nama_lengkap }}" class="uk-border-circle" width="180" height="180">
+                        <img src="{{ url('/file/fotosantri/' . $santri_foto->foto) }}" alt="{{ $santri->nama_lengkap }}" class="uk-border-circle" width="180" height="180">
                     @endif
                     <div class="uk-transition-fade uk-position-cover uk-overlay uk-overlay-primary uk-flex uk-flex-center uk-flex-middle">
                         <p class="uk-margin-remove uk-text-small">Klik tombol di bawah untuk mengubah foto</p>

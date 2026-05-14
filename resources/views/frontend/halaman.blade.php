@@ -22,7 +22,7 @@
             <div class="uk-card uk-card-default uk-border-rounded uk-box-shadow-medium">
                 <!-- Gambar -->
                 <div class="uk-card-media-top">
-                    <img src="{{ url('/storage/halaman/' . $artikel->gambar) }}" alt="{{ $artikel->judul }}" class="uk-border-rounded" style="width: 100%;">
+                    <img src="{{ url('/file/halaman/' . $artikel->gambar) }}" alt="{{ $artikel->judul }}" class="uk-border-rounded" style="width: 100%;">
                 </div>
 
                 <div class="uk-card-body">

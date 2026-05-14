@@ -15,7 +15,7 @@
             <div>
                 <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large uk-border-rounded">
                     <div class="uk-text-center uk-margin-medium-bottom">
-                        <img src="http://127.0.0.1:8000/storage/logo/logo.png" alt="Logo Pesantren" width="80" class="uk-margin-small-bottom">
+                        <img src="{{ \App\Helpers\AlzaHelpers::logo() }}" alt="Logo Pesantren" width="80" class="uk-margin-small-bottom">
                         <h3 class="uk-card-title uk-text-bold uk-margin-remove-top">Masuk ke Portal Santri</h3>
                         <p class="uk-text-muted uk-margin-remove-top">Akses informasi Santri</p>
                     </div>

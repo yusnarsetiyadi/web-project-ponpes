@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
+Route::get('/file/{path}', [\App\Http\Controllers\FileServeController::class, 'serve'])
+    ->where('path', '.*');
+
 Route::get('/', function () {
     return view('frontend.home');
 });

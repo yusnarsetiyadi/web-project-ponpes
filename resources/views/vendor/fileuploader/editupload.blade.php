@@ -20,7 +20,7 @@
                         <button type="button" class="close bg-danger" onclick="del_img(this)" id="{{ $k }}"
                             name="{{ $f }}" style="padding: 5px;"> x
                         </button>
-                        <img class="img-fluid img-thumbnail" src="{{ url('storage/' . config('fileuploader.path')) }}">
+                        <img class="img-fluid img-thumbnail" src="{{ url('file/' . config('fileuploader.path')) }}">
                     </div>
                 @endforeach
             </div>

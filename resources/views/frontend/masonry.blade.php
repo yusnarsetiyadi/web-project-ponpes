@@ -22,7 +22,7 @@
     <h3 class="uk-heading-divider">Semua Foto</h3>
     <div class="masonry">
         @foreach ($relatedGaleris as $row)
-            <div class="masonry-item"><img src="{{url('/storage/galeri/'.$row->foto)}}" alt="{{$row->judul}}"></div>
+            <div class="masonry-item"><img src="{{url('/file/galeri/'.$row->foto)}}" alt="{{$row->judul}}"></div>
         @endforeach
     </div>
 </div>

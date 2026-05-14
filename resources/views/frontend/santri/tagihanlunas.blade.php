@@ -49,8 +49,8 @@
                             <td>{{ $tagihan->bulan ?? '-' }} {{ $tagihan->tahun ?? '' }}</td>
                             <td>
                                 @if($tagihan->bukti)
-                                    <a href="{{ asset('storage/' . $tagihan->bukti) }}" target="_blank">
-                                        <img src="{{ asset('storage/' . $tagihan->bukti) }}" width="50" alt="Bukti">
+                                    <a href="{{ url('/file/' . $tagihan->bukti) }}" target="_blank">
+                                        <img src="{{ url('/file/' . $tagihan->bukti) }}" width="50" alt="Bukti">
                                     </a>
                                 @else
                                     <span class="uk-text-muted">Belum ada</span>
