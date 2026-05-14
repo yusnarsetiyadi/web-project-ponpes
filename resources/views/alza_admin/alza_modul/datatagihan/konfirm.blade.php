@@ -51,7 +51,7 @@
                                 </td>
                                 <td>{{ $tagihan->santri->nama_lengkap ?? '-' }}</td>
                                 <td>{{ $tagihan->pembayaran->nama ?? '-' }}</td>
-                                <td>{{ $tagihan->nominal }}</td>
+                                <td>{{ Alzaget::formatRupiah($tagihan->nominal) }}</td>
                                 <td>{{ $tagihan->santri->jurusan->nama ?? '-' }}</td>
                                 <td>
                                     @if ($tagihan->tingkatpendidikan == 1)
